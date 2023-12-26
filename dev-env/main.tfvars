@@ -9,7 +9,7 @@ docdb = {
     instance_class = "db.t3.medium"
     instance_count = 1
     docdb_subnet_group = "docdb_subnet_group"
-    db_subnet_ids = local.
+    
   }
 
 }
