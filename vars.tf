@@ -3,3 +3,4 @@ variable "docdb" {}
 variable "rds" {}
 variable "elasticcache" {}
 variable "rabbitmq" {}
+variable "db_subnet_ids" {}
