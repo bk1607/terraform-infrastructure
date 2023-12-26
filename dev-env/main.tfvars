@@ -30,7 +30,7 @@ rds = {
 
 elasticcache = {
   main = {
-    cluster_name = "redis-cluster"
+    cluster_name = "elasticcache"
     engine = "redis"
     engine_version = "6.2"
     node_type = "cache.t2.micro"
