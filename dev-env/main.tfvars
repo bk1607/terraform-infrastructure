@@ -16,7 +16,7 @@ docdb = {
 
 rds = {
   main = {
-    cluster_name = "aurora-cluster"
+    cluster_name = "aurora"
     engine_name = "aurora-mysql"
     engine_version = "5.7.mysql_aurora.2.11.4"
     database_name = "rds-database"
