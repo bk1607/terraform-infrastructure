@@ -45,7 +45,7 @@ module "elasticcache" {
 
 module "rabbitmq" {
   source = "git::https://github.com/bk1607/rabbitmq.git"
-  sub_ids = local.db_subnet_ids
-  for_each = var.rabbitmq
-  instance_size = each.value["instance_type"]
+  #sub_ids = local.db_subnet_ids
+  #for_each = var.rabbitmq
+  #instance_size = each.value["instance_type"]
 }

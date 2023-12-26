@@ -40,9 +40,9 @@ elasticcache = {
   }
 }
 
-rabbitmq = {
-  main = {
-    instance_type = "t3.micro"
-
-  }
-}
+#rabbitmq = {
+#  main = {
+#    instance_type = "t3.micro"
+#
+#  }
+#}
