@@ -1,7 +1,7 @@
 env = "dev"
 docdb = {
   main ={
-    cluster_name = "roboshop_docdb"
+    cluster_name = "roboshop-docdb"
     engine = "docdb"
     engine_version = "4.0.0"
     backup = 2
@@ -30,7 +30,7 @@ rds = {
 
 elasticcache = {
   main = {
-    cluster_name = "redis_cluster"
+    cluster_name = "redis-cluster"
     engine = "redis"
     engine_version = "6.2"
     node_type = "cache.t2.micro"
