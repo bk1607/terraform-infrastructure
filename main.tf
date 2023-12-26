@@ -43,9 +43,9 @@ module "elasticcache" {
   subnet_group = each.value["subnet_group"]
 }
 
-module "rabbitmq" {
-  source = "git::https://github.com/bk1607/rabbitmq.git"
-  db_subnet_ids = local.db_subnet_ids
-  for_each = var.rabbitmq
-  instance_type = each.value["instance_type"]
-}
+#module "rabbitmq" {
+#  source = "git::https://github.com/bk1607/rabbitmq.git"
+#  db_subnet_ids = local.db_subnet_ids
+#  for_each = var.rabbitmq
+#  instance_type = each.value["instance_type"]
+#}
