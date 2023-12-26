@@ -29,19 +29,19 @@ module "rds" {
   subnet_group_name = each.value["subnet_group_name"]
 }
 
-#module "elasticcache" {
-#  source = "git::https://github.com/bk1607/elasticcache.git"
-#  env = var.env
-#  db_subnet_ids = local.db_subnet_ids
-#  for_each = var.elasticcache
-#  cluster_name = each.value["cluster_name"]
-#  engine = each.value["engine"]
-#  engine_version = each.value["engine_version"]
-#  node_type = each.value["node_type"]
-#  cache_nodes = each.value["cache_nodes"]
-#  parameter_group = each.value["parameter_group"]
-#  subnet_group = each.value["subnet_group"]
-#}
+module "elasticcache" {
+  source = "git::https://github.com/bk1607/elasticcache.git"
+  env = var.env
+  db_subnet_ids = local.db_subnet_ids
+  for_each = var.elasticcache
+  cluster_name = each.value["cluster_name"]
+  engine = each.value["engine"]
+  engine_version = each.value["engine_version"]
+  node_type = each.value["node_type"]
+  cache_nodes = each.value["cache_nodes"]
+  parameter_group = each.value["parameter_group"]
+  subnet_group = each.value["subnet_group"]
+}
 
 #module "rabbitmq" {
 #  source = "git::https://github.com/bk1607/rabbitmq.git"
