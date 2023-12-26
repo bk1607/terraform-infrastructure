@@ -9,6 +9,7 @@ docdb = {
     instance_class = "db.t3.medium"
     instance_count = 1
     docdb_subnet_group = "docdb_subnet_group"
+    db_subnet_ids = local.
   }
 
 }
@@ -36,5 +37,12 @@ elasticcache = {
     cache_nodes = 1
     parameter_group = "default.redis6.x"
     subnet_group = "elasticcache"
+  }
+}
+
+rabbitmq = {
+  main = {
+    instance_type = "t3.micro"
+
   }
 }

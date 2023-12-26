@@ -1,6 +1,7 @@
 module "docdb" {
   source = "https://github.com/bk1607/docudb.git"
   env = var.env
+  db_subnet_ids = local.db_subnet_ids
   for_each = var.docdb
   cluster_name = each.value["cluster_name"]
   engine = each.value["engine"]
@@ -15,6 +16,7 @@ module "docdb" {
 module "rds" {
   source = "https://github.com/bk1607/rds.git"
   env = var.env
+  db_subnet_ids = local.db_subnet_ids
   for_each = var.rds
   cluster_name = each.value["cluster_name"]
   engine_name = each.value["engine_name"]
@@ -30,6 +32,7 @@ module "rds" {
 module "elasticcache" {
   source = "https://github.com/bk1607/elasticcache.git"
   env = var.env
+  db_subnet_ids = local.db_subnet_ids
   for_each = var.elasticcache
   cluster_name = each.value["cluster_name"]
   engine = each.value["engine"]
@@ -38,4 +41,11 @@ module "elasticcache" {
   cache_nodes = each.value["cache_nodes"]
   parameter_group = each.value["parameter_group"]
   subnet_group = each.value["subnet_group"]
+}
+
+module "rabbitmq" {
+  source = "https://github.com/bk1607/rabbitmq.git"
+  db_subnet_ids = local.db_subnet_ids
+  for_each = var.rabbitmq
+  instance_type = each.value["instance_type"]
 }
