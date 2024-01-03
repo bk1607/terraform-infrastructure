@@ -46,3 +46,23 @@ rabbitmq = {
 
   }
 }
+
+alb = {
+  private = {
+    name = "private_load_balancer"
+    internal = "true"
+    load_balancer_type = "application"
+    enable_deletion_protection = "true"
+    subnets = "app"
+
+  }
+  public = {
+    name = "public_load_balancer"
+    internal = "false"
+    load_balancer_type = "application"
+    enable_deletion_protection = "true"
+    subnets = "web"
+
+  }
+}
+

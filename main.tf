@@ -42,7 +42,18 @@
 #  parameter_group = each.value["parameter_group"]
 #  subnet_group = each.value["subnet_group"]
 #}
-
-module "rabbitmq" {
-  source = "git::https://github.com/bk1607/rabbitmq.git"
+#
+##module "rabbitmq" {
+##  source = "git::https://github.com/bk1607/rabbitmq.git"
+##}
+#
+module "alb" {
+  source = "git::https://github.com/bk1607/web.git"
+  env = var.env
+  for_each = var.alb
+  name = each.value["name"]
+  internal = each.value["internal"]
+  load_balancer_type = each.value["load_balancer_type"]
+  enable_deletion_protection = each.value["enable_deletion_protection"]
+  subnets = lookup(local.subnet_ids,each.value["subnets"], null)
 }
