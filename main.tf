@@ -59,7 +59,7 @@ module "alb" {
 }
 output "local" {
 
-  value = local.subnet_ids
+  value = local.subnet_ids.app
 }
 #module "app" {
 #  source = "git::https://github.com/bk1607/app.git"
