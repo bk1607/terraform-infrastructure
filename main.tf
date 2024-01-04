@@ -57,7 +57,10 @@ module "alb" {
   enable_deletion_protection = each.value["enable_deletion_protection"]
   subnets = lookup(local.subnet_ids, each.value["subnet_name"], null )
 }
+output "local" {
 
+  value = local.subnet_ids
+}
 #module "app" {
 #  source = "git::https://github.com/bk1607/app.git"
 #  env = var.env
