@@ -19,3 +19,10 @@ data "aws_subnets" "app_subnets" {
     values = ["app_private_subnet_1","app_private_subnet_2"]
   }
 }
+data "aws_subnets" "public_subnets" {
+  filter {
+    name   = "tag:Name"
+    values = ["public_subnet_1","public_subnet_2"]
+  }
+}
+

@@ -1,4 +1,5 @@
 env = "dev"
+bastion = "172.31.36.202/32"
 docdb = {
   main ={
     cluster_name = "roboshop-docdb"
@@ -61,8 +62,58 @@ alb = {
     internal = "false"
     load_balancer_type = "application"
     enable_deletion_protection = "true"
-    subnets = "web"
+    subnets = "public"
 
   }
 }
 
+app = {
+  catalogue = {
+    name = "catalogue"
+    instance_type = "t3.nano"
+    max_size = 4
+    min_size = 1
+    desired_capacity = 1
+    subnets = "app"
+  }
+  cart = {
+    name             = "cart"
+    instance_type    = "t3.nano"
+    max_size         = 4
+    min_size         = 1
+    desired_capacity = 1
+    subnets          = "app"
+  }
+  shipping = {
+    name             = "shipping"
+    instance_type    = "t3.micro"
+    max_size         = 4
+    min_size         = 1
+    desired_capacity = 1
+    subnets          = "app"
+  }
+  user = {
+    name             = "user"
+    instance_type    = "t3.nano"
+    max_size         = 4
+    min_size         = 1
+    desired_capacity = 1
+    subnets          = "app"
+  }
+  payment = {
+    name             = "payment"
+    instance_type    = "t3.micro"
+    max_size         = 4
+    min_size         = 1
+    desired_capacity = 1
+    subnets          = "app"
+  }
+  frontend = {
+    name             = "frontend"
+    instance_type    = "t3.nano"
+    max_size         = 4
+    min_size         = 1
+    desired_capacity = 1
+    subnets          = "web"
+  }
+}
