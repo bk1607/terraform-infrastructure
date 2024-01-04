@@ -50,7 +50,7 @@ rabbitmq = {
 
 alb = {
   private = {
-    name = "private_load_balancer"
+    name = "private-load-balancer"
     internal = "true"
     load_balancer_type = "application"
     enable_deletion_protection = "true"
@@ -58,7 +58,7 @@ alb = {
 
   }
   public = {
-    name = "public_load_balancer"
+    name = "public-load-balancer"
     internal = "false"
     load_balancer_type = "application"
     enable_deletion_protection = "true"
