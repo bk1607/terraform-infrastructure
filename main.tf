@@ -56,14 +56,8 @@ module "alb" {
   load_balancer_type = each.value["load_balancer_type"]
   enable_deletion_protection = each.value["enable_deletion_protection"]
   subnets = local.subnet_ids.app
-  outputs = {
-    subnets = each.value["subnets"]
-  }
 }
-output "local" {
-  value = module.alb.subnets
 
-}
 #module "app" {
 #  source = "git::https://github.com/bk1607/app.git"
 #  env = var.env

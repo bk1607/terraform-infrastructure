@@ -1,3 +1,3 @@
-#output "debug_subnet_name" {
-#  value = local.subnet_ids
-#}
+output "debug_subnet_name" {
+  value = lookup(local.subnet_ids, app, null )
+}
