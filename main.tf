@@ -57,15 +57,15 @@ module "alb" {
   subnets = toset(lookup(local.subnet_ids, each.value["subnet_name"], null ))
 }
 
-#module "app" {
-#  source = "git::https://github.com/bk1607/app.git"
-#  env = var.env
-#  bastion = var.bastion
-#  for_each = var.app
-#  name = each.value["name"]
-#  instance_type = each.value["instance_type"]
-#  max_size = each.value["max_size"]
-#  min_size = each.value["min_size"]
-#  desired_capacity = each.value["desired_capacity"]
-#  subnets = lookup(local.subnet_ids,each.value["subnets"], null)
-#}
+module "app" {
+  source = "git::https://github.com/bk1607/app.git"
+  env = var.env
+  bastion = var.bastion
+  for_each = var.app
+  name = each.value["name"]
+  instance_type = each.value["instance_type"]
+  max_size = each.value["max_size"]
+  min_size = each.value["min_size"]
+  desired_capacity = each.value["desired_capacity"]
+  subnets = toset(lookup(local.subnet_ids,each.value["subnets"], null))
+}
