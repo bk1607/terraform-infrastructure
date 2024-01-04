@@ -54,7 +54,7 @@ alb = {
     internal = "true"
     load_balancer_type = "application"
     enable_deletion_protection = "true"
-    subnets = "app"
+    subnet_name = "app"
 
   }
   public = {
@@ -62,7 +62,7 @@ alb = {
     internal = "false"
     load_balancer_type = "application"
     enable_deletion_protection = "true"
-    subnets = "public"
+    subnet_name = "public"
 
   }
 }
