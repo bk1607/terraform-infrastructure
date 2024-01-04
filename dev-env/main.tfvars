@@ -53,7 +53,6 @@ alb = {
     name = "private-load-balancer"
     internal = "true"
     load_balancer_type = "application"
-    enable_deletion_protection = "true"
     subnet_name = "app"
 
   }
@@ -61,7 +60,6 @@ alb = {
     name = "public-load-balancer"
     internal = "false"
     load_balancer_type = "application"
-    enable_deletion_protection = "true"
     subnet_name = "public"
 
   }
