@@ -68,4 +68,6 @@ module "app" {
   min_size = each.value["min_size"]
   desired_capacity = each.value["desired_capacity"]
   subnets = toset(lookup(local.subnet_ids,each.value["subnets"], null))
+  port_number = each.value["port_number"]
+  allow_app = toset(lookup(local.subnet_ids,each.value["allow_app"], null))
 }

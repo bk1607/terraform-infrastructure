@@ -73,6 +73,8 @@ app = {
     min_size = 1
     desired_capacity = 1
     subnets = "app"
+    port_number = 8080
+    allow_app = "app"
   }
   cart = {
     name             = "cart"
@@ -81,6 +83,8 @@ app = {
     min_size         = 1
     desired_capacity = 1
     subnets          = "app"
+    port_number = 8080
+    allow_app = "app"
   }
   shipping = {
     name             = "shipping"
@@ -89,6 +93,8 @@ app = {
     min_size         = 1
     desired_capacity = 1
     subnets          = "app"
+    port_number = 8080
+    allow_app = "app"
   }
   user = {
     name             = "user"
@@ -97,6 +103,8 @@ app = {
     min_size         = 1
     desired_capacity = 1
     subnets          = "app"
+    port_number = 8080
+    allow_app = "app"
   }
   payment = {
     name             = "payment"
@@ -105,6 +113,8 @@ app = {
     min_size         = 1
     desired_capacity = 1
     subnets          = "app"
+    port_number = 8080
+    allow_app = "app"
   }
   frontend = {
     name             = "frontend"
@@ -113,5 +123,7 @@ app = {
     min_size         = 1
     desired_capacity = 1
     subnets          = "web"
+    port_number = 80
+    allow_app = "public"
   }
 }
