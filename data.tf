@@ -27,24 +27,3 @@ data "aws_subnets" "public_subnets" {
 }
 
 
-#to get vpc id
-#data "aws_vpc" "main"{
-#  tags = {
-#    Name = "main"
-#  }
-#}
-#
-##to get list of subnets
-#data "aws_subnets" "example" {
-#  filter {
-#    name   = "vpc-id"
-#    values = [data.aws_vpc.main.id]
-#  }
-#
-#}
-#
-## to get list of subnet ids
-#data "aws_subnet" "example" {
-#  for_each = toset(data.aws_subnets.example.ids)
-#  id       = each.value
-#}

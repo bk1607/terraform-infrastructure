@@ -1,3 +1,3 @@
 output "vpc_details" {
-  value = module.vpc["main"].private_subnets
+  value = local.subnet_ids
 }

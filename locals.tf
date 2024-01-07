@@ -17,6 +17,6 @@
 #}
 locals {
   subnet_ids = {
-    db = tolist([module.vpc])
+    db = tolist([module.vpc["main"].private_subnets["db_private_subnet_1"].id, module.vpc["main"].private_subnets["db_private_subnet_2"].id])
   }
 }
