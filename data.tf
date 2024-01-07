@@ -28,11 +28,11 @@ data "aws_subnets" "public_subnets" {
 
 
 #to get vpc id
-data "aws_vpc" "main"{
-  tags = {
-    Name = "main"
-  }
-}
+#data "aws_vpc" "main"{
+#  tags = {
+#    Name = "main"
+#  }
+#}
 #
 ##to get list of subnets
 #data "aws_subnets" "example" {
