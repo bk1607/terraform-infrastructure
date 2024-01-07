@@ -6,3 +6,4 @@ variable "rabbitmq" {}
 variable "alb" {}
 variable "app" {}
 variable "bastion" {}
+variable "vpc" {}
