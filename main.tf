@@ -74,7 +74,6 @@
 
 module "vpc" {
   source = "git::https://github.com/bk1607/vpc_tf.git"
-  env = var.env
   for_each = var.vpc
   public_subnets = each.value["public_subnets"]
   private_subnets = each.value["private_subnets"]
