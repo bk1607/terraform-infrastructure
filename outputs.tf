@@ -1,3 +1,3 @@
-output "debug_subnet_name" {
-  value = lookup(local.subnet_ids, "public", null )
+output "vpc_details" {
+  value = module.vpc
 }
