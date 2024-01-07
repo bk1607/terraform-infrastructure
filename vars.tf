@@ -7,3 +7,4 @@ variable "alb" {}
 variable "app" {}
 variable "bastion" {}
 variable "vpc" {}
+variable "tags" {}
