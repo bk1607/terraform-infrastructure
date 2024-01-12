@@ -55,6 +55,7 @@ module "alb" {
   internal = each.value["internal"]
   load_balancer_type = each.value["load_balancer_type"]
   subnets = lookup(local.subnet_ids, each.value["subnet_name"], null )
+  cidr_block = each.value["cidr_block"]
 }
 
 module "app" {
