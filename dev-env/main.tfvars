@@ -55,7 +55,7 @@ alb = {
     load_balancer_type = "application"
     subnet_name = "app"
     cidr_block = ["10.0.3.0/24","10.0.4.0/24","10.0.5.0/24","10.0.6.0/24"]
-    vpc_id = var
+
 
   }
   public = {
