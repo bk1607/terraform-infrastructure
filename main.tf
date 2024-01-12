@@ -56,6 +56,7 @@ module "alb" {
   load_balancer_type = each.value["load_balancer_type"]
   subnets = lookup(local.subnet_ids, each.value["subnet_name"], null )
   cidr_block = each.value["cidr_block"]
+  vpc_id = local.vpc_id
 }
 
 module "app" {
@@ -71,6 +72,7 @@ module "app" {
   subnets = lookup(local.subnet_ids,each.value["subnets"], null)
   port_number = each.value["port_number"]
   allow_app = lookup(local.cidr_blocks,each.value["allow_app"], null)
+  vpc_id = local.vpc_id
 }
 
 module "vpc" {
