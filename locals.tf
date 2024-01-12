@@ -16,7 +16,6 @@
 #  subnet_info = { for s in data.aws_subnet.example : s.tags["Name"] => s.cidr_block}
 #}
 locals {
-  vpc_id = module.vpc["main"]
   subnet_ids = {
     db = tolist([module.vpc["main"].private_subnets["db_private_subnet_1"].id, module.vpc["main"].private_subnets["db_private_subnet_2"].id])
     app =  tolist([module.vpc["main"].private_subnets["app_private_subnet_1"].id, module.vpc["main"].private_subnets["app_private_subnet_2"].id])
