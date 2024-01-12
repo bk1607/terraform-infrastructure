@@ -2,5 +2,5 @@
 #  value = local.subnet_ids
 #}
 output "vpc_id" {
-  value = module.vpc
+  value = module.vpc.vpc_id
 }
