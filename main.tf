@@ -73,6 +73,7 @@ module "app" {
   port_number = each.value["port_number"]
   allow_app = lookup(local.cidr_blocks,each.value["allow_app"], null)
   vpc_id = module.vpc["main"].vpc_id
+  lb_dns_name =
 }
 
 module "vpc" {

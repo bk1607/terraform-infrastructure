@@ -78,6 +78,7 @@ app = {
     subnets = "app"
     port_number = 8080
     allow_app = "app"
+    alb       = "private"
   }
   cart = {
     name             = "cart"
@@ -88,6 +89,7 @@ app = {
     subnets          = "app"
     port_number = 8080
     allow_app = "app"
+    alb       = "private"
   }
   shipping = {
     name             = "shipping"
@@ -98,6 +100,7 @@ app = {
     subnets          = "app"
     port_number = 8080
     allow_app = "app"
+    alb       = "private"
   }
   user = {
     name             = "user"
@@ -108,6 +111,7 @@ app = {
     subnets          = "app"
     port_number = 8080
     allow_app = "app"
+    alb       = "private"
   }
   payment = {
     name             = "payment"
@@ -118,6 +122,7 @@ app = {
     subnets          = "app"
     port_number = 8080
     allow_app = "app"
+    alb       = "private"
   }
   frontend = {
     name             = "frontend"
@@ -128,6 +133,7 @@ app = {
     subnets          = "web"
     port_number = 80
     allow_app = "public"
+    alb       = "public"
   }
 }
 
