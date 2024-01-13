@@ -6,5 +6,5 @@ output "vpc_id" {
 }
 
 output "alb" {
-  value = module.alb["private"]
+  value = module.alb["private"]["dns_name"]
 }
