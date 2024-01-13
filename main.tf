@@ -74,6 +74,7 @@ module "app" {
   allow_app = lookup(local.cidr_blocks,each.value["allow_app"], null)
   vpc_id = module.vpc["main"].vpc_id
   lb_dns_name = lookup(lookup(lookup(module.alb,each.value["alb"], null ),"alb_details",null),"dns_name",null)
+  #listener_arn = lookup(lookup(lookup(module.alb,each.value["alb"], null ),"listener_details",null),"dns_name",null)
 }
 
 module "vpc" {

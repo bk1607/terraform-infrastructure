@@ -79,6 +79,7 @@ app = {
     port_number = 8080
     allow_app = "app"
     alb       = "private"
+    priority = 10
   }
   cart = {
     name             = "cart"
@@ -90,6 +91,7 @@ app = {
     port_number = 8080
     allow_app = "app"
     alb       = "private"
+    priority = 11
   }
   shipping = {
     name             = "shipping"
@@ -101,6 +103,7 @@ app = {
     port_number = 8080
     allow_app = "app"
     alb       = "private"
+    priority = 12
   }
   user = {
     name             = "user"
@@ -112,6 +115,7 @@ app = {
     port_number = 8080
     allow_app = "app"
     alb       = "private"
+    priority = 13
   }
   payment = {
     name             = "payment"
@@ -123,6 +127,7 @@ app = {
     port_number = 8080
     allow_app = "app"
     alb       = "private"
+    priority = 14
   }
   frontend = {
     name             = "frontend"
@@ -134,6 +139,7 @@ app = {
     port_number = 80
     allow_app = "public"
     alb       = "public"
+    priority = 10
   }
 }
 
