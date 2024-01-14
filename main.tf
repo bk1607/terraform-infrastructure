@@ -43,47 +43,49 @@
 #  subnet_group = each.value["subnet_group"]
 #}
 #
-##module "rabbitmq" {
-##  source = "git::https://github.com/bk1607/rabbitmq.git"
-##}
+module "rabbitmq" {
+  source = "git::https://github.com/bk1607/rabbitmq.git"
+}
 #
-module "alb" {
-  source = "git::https://github.com/bk1607/web.git"
-  env = var.env
-  for_each = var.alb
-  name = each.value["name"]
-  internal = each.value["internal"]
-  load_balancer_type = each.value["load_balancer_type"]
-  subnets = lookup(local.subnet_ids, each.value["subnet_name"], null )
-  cidr_block = each.value["cidr_block"]
-  vpc_id = module.vpc["main"].vpc_id
-}
+#module "alb" {
+#  source = "git::https://github.com/bk1607/web.git"
+#  env = var.env
+#  for_each = var.alb
+#  name = each.value["name"]
+#  internal = each.value["internal"]
+#  load_balancer_type = each.value["load_balancer_type"]
+#  subnets = lookup(local.subnet_ids, each.value["subnet_name"], null )
+#  cidr_block = each.value["cidr_block"]
+#  vpc_id = module.vpc["main"].vpc_id
+#}
+#
+#module "app" {
+#  source = "git::https://github.com/bk1607/app.git"
+#  env = var.env
+#  bastion = var.bastion
+#  for_each = var.app
+#  name = each.value["name"]
+#  instance_type = each.value["instance_type"]
+#  max_size = each.value["max_size"]
+#  min_size = each.value["min_size"]
+#  desired_capacity = each.value["desired_capacity"]
+#  subnets = lookup(local.subnet_ids,each.value["subnets"], null)
+#  port_number = each.value["port_number"]
+#  allow_app = lookup(local.cidr_blocks,each.value["allow_app"], null)
+#  vpc_id = module.vpc["main"].vpc_id
+#  lb_dns_name = lookup(lookup(lookup(module.alb,each.value["alb"], null ),"alb_details",null),"dns_name",null)
+#  listener_arn = lookup(lookup(lookup(module.alb,each.value["alb"], null ),"listener_details",null),"arn",null)
+#  priority = each.value["priority"]
+#}
+#
+#module "vpc" {
+#  source = "git::https://github.com/bk1607/vpc_tf.git"
+#  for_each = var.vpc
+#  public_subnets = each.value["public_subnets"]
+#  private_subnets = each.value["private_subnets"]
+#
+#}
 
-module "app" {
-  source = "git::https://github.com/bk1607/app.git"
-  env = var.env
-  bastion = var.bastion
-  for_each = var.app
-  name = each.value["name"]
-  instance_type = each.value["instance_type"]
-  max_size = each.value["max_size"]
-  min_size = each.value["min_size"]
-  desired_capacity = each.value["desired_capacity"]
-  subnets = lookup(local.subnet_ids,each.value["subnets"], null)
-  port_number = each.value["port_number"]
-  allow_app = lookup(local.cidr_blocks,each.value["allow_app"], null)
-  vpc_id = module.vpc["main"].vpc_id
-  lb_dns_name = lookup(lookup(lookup(module.alb,each.value["alb"], null ),"alb_details",null),"dns_name",null)
-  listener_arn = lookup(lookup(lookup(module.alb,each.value["alb"], null ),"listener_details",null),"arn",null)
-  priority = each.value["priority"]
-}
 
-module "vpc" {
-  source = "git::https://github.com/bk1607/vpc_tf.git"
-  for_each = var.vpc
-  public_subnets = each.value["public_subnets"]
-  private_subnets = each.value["private_subnets"]
-
-}
 
 
